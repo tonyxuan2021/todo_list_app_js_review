@@ -4,6 +4,8 @@ const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 
+console.log(todoInput);
+
 //Event Listeners
 todoButton.addEventListener("click", addTodo);
 
@@ -17,7 +19,7 @@ function addTodo(event) {
 
   // create li
   const newTodo = document.createElement("li");
-  newTodo.innerText = "hey";
+  newTodo.innerText = todoInput.value;
   newTodo.classList.add("todo-item");
   todoDiv.appendChild(newTodo);
   // CHECK MARK BUTTON
@@ -33,4 +35,6 @@ function addTodo(event) {
 
   // APPEND TO LIST
   todoList.appendChild(todoDiv);
+  // Clear Todo Input Value
+  todoInput.value = "";
 }
